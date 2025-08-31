@@ -9,7 +9,11 @@ dotenv.config();
 
 const app=express();
 
-app.use(cors());
+app.use(cors({
+    origin: 'https://social-media-platform-dun.vercel.app',
+    methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+    credentials: true // allow cookies if needed
+}));
 app.use(express.json());
 
 app.use(postRoutes);
