@@ -22,7 +22,7 @@ app.use(express.static("uploads"));
 
 
 const start=async()=>{
-    const connectDB=mongoose.connect("mongodb+srv://siddhanthtiwari885:siddsahihai@linkedin.270viza.mongodb.net/?retryWrites=true&w=majority&appName=linkedin");
+    const connectDB=mongoose.connect(process.env.MONGODB_URL);
     console.log("database is connected");
 
     app.listen(9090,()=>{
